@@ -40,6 +40,7 @@ function getWeather(location) {
   const path = 'current.json'
   const apiKey = 'key=fdcc760077f34555b2a135105230705';
   const query = `q=${location}`;
+  renderText('loading');
 
   return fetch(makeUrl(baseUrl, path, appendParams(query, apiKey)), {mode: 'cors'})
     .then(function(response) {
@@ -82,6 +83,7 @@ async function getWeatherAwait(location) {
 
   const url  = makeUrl(baseUrl, path, appendParams(query, apiKey));
   let response = await fetch(url, {mode: 'cors'})
+  renderText('loading');
 
   if(response.ok) {
     response = await response.json();
@@ -145,8 +147,12 @@ function render(data) {
 }
 
 function renderClear() {
+  renderText('');
+}
+
+function renderText(str) {
   [...cachedNodes.resultContainer.querySelectorAll('span')].forEach((child) => {
-    tc(child, 'empty');
+    tc(child, str);
   });
 
   cachedNodes.resultContainer.querySelector('img').src = '';
