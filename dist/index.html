@@ -4,24 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font awesome icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Weather app</title>
   <script defer src="main.js"></script></head>
   <body> 
-    <div id="search-bar-container">
-      <input type="text" name="" id="search-bar">
-      <button type="button" id="search-button">Search</button>
-    </div>
-    <div id="result-container"></div><span class="error" id="error">
-      <p id="name"></p>
-      <p id="region"></p>
-      <p id="country"></p>
-      <p id="localtime"></p>
-      <p id="temp_c"></p>
-      <p id="feelslike_c"></p>
-      <p id="condition"></p>
-      <p id="wind_kph"></p>
-      <p id="humidity"></p>
-      <p id="cloud"></p>
-      <p id="uv"></p></span>
+    <h3>Current weather app (weather API) implementation test</h3>
+    <h4 id="search-error"></h4>
+    <main>
+      <div id="search-bar-container">
+        <input type="text" name="" id="search-bar">
+        <button type="button" id="search-button">Search</button>
+      </div>
+      <div id="result-container">
+        <div class="country-info">
+          <p><span id="name">empty</span></p>
+          <p><span id="region">empty</span></p>
+          <p><span id="country">empty</span></p>
+          <p><span id="localtime">empty</span></p>
+        </div>
+        <div class="condition-temp-info-container">
+          <div class="condition-info">
+            <p><span id="condition">empty</span></p><img id="condition_icon" src="">
+          </div>
+          <div class="temp-info">
+            <div><i class="fa-solid fa-temperature-half"></i>
+              <p> Temperature: <span id="temp_c">empty</span> °C</p>
+            </div>
+            <p>Feels like: <span id="feelslike_c">empty</span> °C</p>
+          </div>
+        </div>
+        <div class="extra-info">
+          <div> <i class="fa-solid fa-wind"></i>
+            <p>Wind speed: <span id="wind_kph">empty</span> km/h</p>
+          </div>
+          <div><i class="fa-solid fa-droplet"></i>
+            <p>Humidity: <span id="humidity">empty</span> %</p>
+          </div>
+          <div><i class="fa-solid fa-smog"></i>
+            <p>Cloud: <span id="cloud">empty</span> %</p>
+          </div>
+          <div><i class="fa-solid fa-sun"></i>
+            <p>UV index: <span id="uv">empty</span></p>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

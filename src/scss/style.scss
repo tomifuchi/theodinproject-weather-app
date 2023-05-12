@@ -1,0 +1,106 @@
+@import './starter/starter';
+
+body {
+    @include flex($direction: column, $align: center, $justify: center);
+    min-height: 100vh;
+
+    background-image: url('../assets/img/bg.jpg');
+    background-size: cover;
+
+    color: white;
+    font-size: 1.3rem;
+}
+
+h3, h4 {
+    text-align: center;
+}
+
+main {
+    @include flex($direction: column, $align: center);
+    border-radius: 20px;
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    #search-bar-container {
+        @include flex($wrap: wrap);
+        gap: 10px;
+        width: 100%;
+
+        #search-bar {
+            flex: 1;
+        }
+    }
+
+    #result-container {
+        @include grid($column: 1fr 1fr);
+        @include defineGridArea(
+            (
+                'div.contry-info': contry-info,
+                'div.condition-temp-info-container': temp-con-info ,
+                'div.extra-info': extra-info
+            )
+        );
+        grid-template-areas: 
+            'country-info temp-con-info'
+            'extra-info extra-info'
+        ;
+        align-items: center;
+        
+        & > * {
+            padding: 50px;
+        }
+
+        i {
+            display: block;
+        }
+        p {
+            text-align: center;
+        }
+    }
+
+    .condition-info {
+        @include flex($direction: column, $align: center);
+    }
+
+    .temp-info {
+        @include flex($direction: column, $align: center);
+        div {
+            @include flex($align: center);
+            gap: 5px;
+        }
+    }
+
+    .extra-info {
+        @include flex();
+        gap: 10px;
+
+        div {
+            @include flex($align: center);
+            i {
+                margin-right: 5px;
+            }
+            * {
+            }
+        }
+ 
+    }
+}
+
+@media (max-width: 1000px) {
+
+    main {
+        button {
+        }
+
+        #result-container {
+            @include flex($direction: column);
+        }
+
+        @media (max-width: 650px) {
+             .extra-info {
+                flex-direction: column;
+            }
+        }
+    }
+}

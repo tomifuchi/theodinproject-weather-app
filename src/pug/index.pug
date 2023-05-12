@@ -4,21 +4,41 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //Font awesome icon
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css")
         title Weather app
     body 
-        div#search-bar-container
-            input(type="text", name="", id="search-bar")
-            button(type="button" id="search-button") Search
-        div#result-container
-        span(class="error" id="error")
-            p#name
-            p#region
-            p#country
-            p#localtime
-            p#temp_c
-            p#feelslike_c
-            p#condition
-            p#wind_kph
-            p#humidity
-            p#cloud
-            p#uv
+        h3 Current weather app (weather API) implementation test
+        h4#search-error
+        main
+            div#search-bar-container
+                input(type="text", name="", id="search-bar")
+                button(type="button" id="search-button") Search
+            div#result-container
+                div.country-info
+                    p <span id="name">empty</span>
+                    p <span id="region">empty</span>
+                    p <span id="country">empty</span>
+                    p <span id="localtime">empty</span>
+                div.condition-temp-info-container
+                    div.condition-info
+                        p <span id="condition">empty</span>
+                        img(id="condition_icon" src='')
+                    div.temp-info
+                        div
+                            <i class="fa-solid fa-temperature-half"></i>
+                            p  Temperature: <span id="temp_c">empty</span> °C
+                        p Feels like: <span id="feelslike_c">empty</span> °C
+                div.extra-info
+                    div 
+                        i(class="fa-solid fa-wind")
+                        p Wind speed: <span id="wind_kph">empty</span> km/h
+                    div
+                        i(class="fa-solid fa-droplet")
+                        p Humidity: <span id="humidity">empty</span> %
+                    div
+                        i(class="fa-solid fa-smog")
+                        p Cloud: <span id="cloud">empty</span> %
+                    div
+                        i(class="fa-solid fa-sun")
+                        p UV index: <span id="uv">empty</span>
