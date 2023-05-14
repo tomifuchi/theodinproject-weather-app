@@ -21,7 +21,7 @@
   current.cloud
   current.uv
 
-  UV index
+  UV index and it's meaning
   https://en.wikipedia.org/wiki/Ultraviolet_index
 */
 
